@@ -37,4 +37,11 @@ app.get("/api/users/:user_id", (req, res) => {
   const user = users.filter(data => data.id == user_id);
   res.json({ok:false, users:user});
 })
+
+// post, request body, response O
+app.post("/api/users/userBody", (req, res) => {
+  const user_id = req.body.id
+  const user = users.filter(data => data.id == user_id);
+  res.json({ok:true, users:user});
+})
 module.exports = app;
